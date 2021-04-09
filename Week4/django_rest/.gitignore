@@ -1,4 +1,4 @@
 venv/
 .idea
-api_service/db.sqlite3
-api_service/media/*
+db.sqlite3
+media/*
