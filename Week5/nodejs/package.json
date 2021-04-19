@@ -1,0 +1,23 @@
+{
+
+  "name": "crud-express",
+  "version": "1.0.0",
+  "description": "Crud en express usando un array",
+  "main": "index.js",
+  "repository": "https://github.com/AmaruEscalante/backend-codigo-lessons",
+  "author": "Amaru Escalante <amaruescalante@gmail.com>",
+  "license": "MIT",
+
+  "scripts": {
+    "start": "nodemon --exec babel-node ./index.js"
+  },
+
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.15",
+    "@babel/node": "^7.13.13",
+    "@babel/preset-env": "^7.13.15"
+  }
+}
