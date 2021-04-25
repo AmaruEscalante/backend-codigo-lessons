@@ -1,11 +1,20 @@
 import express from "express";
+import { jobs_router } from "../routers/jobs";
 
 export class Server{
     constructor(){
         this.app = express();
-        this.puerto = process.env.PORT || 8000;
+        this.port = process.env.PORT || 8000;
+        this.routes();
+    }
 
-    }    
+    routes() {
+        this.app.get("/", (req, res) => {
+            res.send("Hello, welcome to my API 😋");
+        });
+
+        this.app.use(jobs_router);
+    }
 
     startServer(){
         this.app.listen(this.port, ()=>{
