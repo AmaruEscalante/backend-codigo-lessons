@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "07c3cb74-d1af-46e2-b1c7-d20cf037d0c4",
+		"name": "codigo-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "drf-crud-reto-semana04",
+			"item": [
+				{
+					"name": "Public",
+					"item": [
+						{
+							"name": "/booking/",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/booking",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"booking"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/booking/",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"student\": \"example@mail.com\",\n    \"subject\": \"subject\",\n    \"duration_h\": \"01:00:00\",\n    \"date\": \"2021-04-28T03:28\",\n    \"course\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/booking/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"booking",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Authorized",
+					"item": [
+						{
+							"name": "/courses/ authorized",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "example",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "example",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Quimica\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/courses/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"courses",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/courses/ authorized",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "example",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "example",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/courses/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"courses",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://127.0.0.1:8000"
+		}
+	]
+}

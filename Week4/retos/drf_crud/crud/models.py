@@ -13,6 +13,9 @@ class Course(models.Model):
                             help_text='Course name',
                             null=False)
 
+    def __str__(self):
+        return self.name
+
 
 class Tutor(models.Model):
     """
@@ -69,6 +72,7 @@ class Booking(models.Model):
 
     tutor = models.ForeignKey(to=Tutor,
                               blank=True,
+                              null=True,
                               related_name='bookings',
                               on_delete=models.CASCADE,
                               db_column='tutor')
