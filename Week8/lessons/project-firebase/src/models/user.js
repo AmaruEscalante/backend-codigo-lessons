@@ -26,7 +26,7 @@ const userSchema = new Schema(
         address: Schema.Types.String,
         photo: Schema.Types.String,
         gender: {
-            required: True, 
+            required: true, 
             type: Schema.Types.String,
         },
         phones: [phoneSchema],
