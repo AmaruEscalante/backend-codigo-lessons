@@ -14,3 +14,6 @@ export const image_router = Router();
 
 image_router.route("/uploadImage")
     .post(multer.single("image"),image_controller.uploadImage);
+
+image_router.route("/deleteImage")
+    .delete(image_controller.deleteImage);

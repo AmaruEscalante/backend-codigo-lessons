@@ -1,4 +1,6 @@
 import { Storage } from "@google-cloud/storage";
+import { v4 as uuidv4 } from 'uuid';
+
 
 const storage = new Storage({
     projectId: "codigo-project",
@@ -15,7 +17,8 @@ export const uploadFile = (file) => {
         // validate that file is uploaded
         if(!file) return reject("File wasn't found");
         // define the name which the file will be stored in firebase
-        const fileName = bucket.file(file.originalname);
+        const uuid = uuidv4();
+        const fileName = bucket.file(`${uuid}${file.originalname}`);
         // additional config such as extension and format
         const blobStream = fileName.createWriteStream({
             metadata:{
@@ -46,4 +49,8 @@ export const uploadFile = (file) => {
         blobStream.end(file.buffer);
     });
 
-}
+};
+
+export const deleteFile = (fileName) => 
+    bucket.file(fileName).delete();
+
